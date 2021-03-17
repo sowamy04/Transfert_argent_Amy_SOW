@@ -1,0 +1,62 @@
+ion-title{
+  margin-left: 30%;
+}
+
+ion-content{
+  --background: #f2f2f2;
+  --ion-height: 85%;
+}
+
+ion-toolbar{
+  --ion-margin-top: 5%;
+}
+
+ion-item{
+  --background: #f2f2f2;
+}
+
+ion-input {
+  font-weight: bolder;
+}
+
+$color :(
+  bright :  #7ad4fa
+);
+
+#entete{
+  height: 21.7%;
+  background-color: white;
+}
+
+#centrerTexte{
+  height: 100%;
+  width: 60%;
+  margin-left: 20%;
+  float: bottom;
+  margin-top: 9.3%;
+}
+
+#texte{
+  width: 90%;
+  border-bottom: 2px solid #7ad4fa;
+  border-width: 3px;
+  font-size: 15px;
+  color:black;
+  margin-bottom: 2.5%;
+  margin-top: 3%;
+  float: bottom;
+}
+
+#bouton{
+  --background: #ff1a00;
+  color: white;
+}
+
+.my-class {
+  .alert-head {
+  background-color: red;
+  }
+  .alert-message {
+  font-size: 20px;
+  }
+  }

@@ -1,0 +1,154 @@
+<div id="entete">
+  <ion-toolbar class="mt-4">
+    <ion-buttons slot="start">
+      <ion-icon name="home" color="bright"></ion-icon>
+      </ion-buttons>
+    <ion-title>
+      <img src="assets/images/logo.png" alt="" class="w-25" id="logo">
+    </ion-title>
+
+  </ion-toolbar>
+  <div id="divtexte">
+    <div id="centrerTexte" class="ion-text-center">
+      <p (click)="toutesTrans()" id="texte1" class="float-left {{cssToute}}"> <ion-icon name="sync-outline"></ion-icon> Toutes les transactions</p>
+      <p (click)="mesTrans()" id="texte" class="float-right {{cssMes}}"> <ion-icon name="sync-outline"></ion-icon> Mes transactions</p>
+    </div>
+  </div>
+</div>
+
+<ion-content>
+<div class="row mt-1">
+  <div>
+    <ion-item class="col-md-2" interface="action-sheet">
+      <ion-select placeholder="Users">
+        <ion-select-option value="anta">Anta</ion-select-option>
+        <ion-select-option value="rama">Rama</ion-select-option>
+        <ion-select-option value="maty">Maty</ion-select-option>
+        <ion-select-option value="adji">Adja</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <div>
+    <ion-item class="col-md-2" interface="action-sheet">
+      <ion-select placeholder="Type">
+        <ion-select-option value="depot">Dépôt</ion-select-option>
+        <ion-select-option value="retrait">Retrait</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <div>
+    <ion-item class="col-md-2">
+      <ion-label>Du</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+    </ion-item>
+  </div>
+  <div>
+    <ion-item class="col-md-2">
+      <ion-label>Au</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+    </ion-item>
+  </div>
+</div>
+
+<div [hidden]="touteTrans">
+  <div>
+    <ion-grid class="ion-margin">
+      <ion-row>
+        <ion-col>Date</ion-col>
+        <ion-col>Utilisateurs</ion-col>
+        <ion-col>Type</ion-col>
+        <ion-col>Montant</ion-col>
+        <ion-col>Frais</ion-col>
+      </ion-row><ion-row>
+        <ion-col>01-12-2020</ion-col>
+        <ion-col>Adja Mbaye</ion-col>
+        <ion-col>depot</ion-col>
+        <ion-col>10.000</ion-col>
+        <ion-col>850</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>01-12-2020</ion-col>
+        <ion-col>Adja Mbaye</ion-col>
+        <ion-col>depot</ion-col>
+        <ion-col>10.000</ion-col>
+        <ion-col>850</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>01-12-2020</ion-col>
+        <ion-col>Adja Mbaye</ion-col>
+        <ion-col>depot</ion-col>
+        <ion-col>10.000</ion-col>
+        <ion-col>850</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>01-12-2020</ion-col>
+        <ion-col>Adja Mbaye</ion-col>
+        <ion-col>depot</ion-col>
+        <ion-col>10.000</ion-col>
+        <ion-col>850</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>01-12-2020</ion-col>
+        <ion-col>Adja Mbaye</ion-col>
+        <ion-col>depot</ion-col>
+        <ion-col>10.000</ion-col>
+        <ion-col>850</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div id="total" class="text-white rounded-pill">
+    <div id="totalTexte" class="rounded-pill">
+      <p class="ml-3"> Total </p>
+    </div>
+    <div id="montant" class="rounded-pill">
+      <p> 40.000</p>
+    </div>
+  </div>
+</div>
+
+<div [hidden]="meTrans">
+  <div>
+    <ion-grid class="ion-margin">
+      <ion-row>
+        <ion-col>Date</ion-col>
+        <ion-col>Utilisateurs</ion-col>
+        <ion-col>Type</ion-col>
+        <ion-col>Montant</ion-col>
+        <ion-col>Frais</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>01-12-2020</ion-col>
+        <ion-col>Adja Mbaye</ion-col>
+        <ion-col>depot</ion-col>
+        <ion-col>10.000</ion-col>
+        <ion-col>850</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>01-12-2020</ion-col>
+        <ion-col>Adja Mbaye</ion-col>
+        <ion-col>depot</ion-col>
+        <ion-col>10.000</ion-col>
+        <ion-col>850</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>01-12-2020</ion-col>
+        <ion-col>Adja Mbaye</ion-col>
+        <ion-col>depot</ion-col>
+        <ion-col>10.000</ion-col>
+        <ion-col>850</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div id="total" class="text-white rounded-pill">
+    <div id="totalTexte" class="rounded-pill">
+      <p class="ml-3"> Total </p>
+    </div>
+    <div id="montant" class="rounded-pill">
+      <p> 30.000</p>
+    </div>
+  </div>
+</div>
+
+</ion-content>

@@ -1,0 +1,10 @@
+{
+  "name": "front_transfert_argent",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

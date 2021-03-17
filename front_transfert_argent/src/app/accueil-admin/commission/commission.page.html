@@ -1,0 +1,76 @@
+<div id="entete">
+  <ion-toolbar class="mt-4">
+    <ion-buttons slot="start">
+      <ion-icon name="home" color="bright"></ion-icon>
+      </ion-buttons>
+    <ion-title>
+      <img src="assets/images/logo.png" alt="" class="w-25" id="logo">
+    </ion-title>
+
+  </ion-toolbar>
+  <div id="divtexte">
+    <div id="centrerTexte" class="ion-text-center">
+      <p id="texte"> <ion-icon name="sync-outline"></ion-icon> Mes commissions</p>
+    </div>
+  </div>
+</div>
+
+<ion-content>
+<div class="row mt-1">
+  <div>
+    <ion-item class="col-md-2" interface="action-sheet">
+      <ion-select placeholder="Type">
+        <ion-select-option value="depot">Dépôt</ion-select-option>
+        <ion-select-option value="retrait">Retrait</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <div>
+    <ion-item class="col-md-4">
+      <ion-label>Du</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+    </ion-item>
+  </div>
+  <div>
+    <ion-item class="col-md-4">
+      <ion-label>Au</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY"></ion-datetime>
+    </ion-item>
+  </div>
+</div>
+
+<div>
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col>Date</ion-col>
+      <ion-col>Type</ion-col>
+      <ion-col>Montant</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>01-12-2020</ion-col>
+      <ion-col>depot</ion-col>
+      <ion-col>10.000</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>01-12-2020</ion-col>
+      <ion-col>depot</ion-col>
+      <ion-col>10.000</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>01-12-2020</ion-col>
+      <ion-col>retrait</ion-col>
+      <ion-col>10.000</ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<div id="total" class="text-white rounded-pill">
+  <div id="totalTexte" class="rounded-pill">
+    <p class="ml-3"> Total </p>
+  </div>
+  <div id="montant" class="rounded-pill">
+    <p> 1.000.000</p>
+  </div>
+</div>
+
+</ion-content>

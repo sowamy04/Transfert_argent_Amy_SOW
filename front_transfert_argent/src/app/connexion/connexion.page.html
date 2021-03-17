@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true">
+  <div id="header" class="shadow-lg">
+    <div id="image" class="justify-content-center">
+      <img id="imagePos" src="assets/images/logo.png" alt="">
+    </div>
+    <div id="divtexte">
+      <div id="centrerTexte" class="ion-text-center">
+        <p id="texte"> Login</p>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <form (ngSubmit)="connexion()" padding-right [formGroup]="loginForm">
+      <ion-item lines="inset">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item lines="inset">
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <p id="mpd">Mot de passe oublié?</p>
+      <ion-item lines="none" class="ion-item-right-margin">
+        <ion-button routerLink="/admin" size="default" shape="round" type="submit" [disabled]="!loginForm.valid" id="bouton">Se connecter</ion-button>
+      </ion-item>
+      </form>
+  </div>
+</ion-content>

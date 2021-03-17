@@ -1,0 +1,33 @@
+<div id="entete">
+  <ion-toolbar class="mt-4">
+    <ion-buttons slot="start">
+      <ion-icon name="home" color="bright"></ion-icon>
+      </ion-buttons>
+    <ion-title>
+      <img src="assets/images/logo.png" alt="" class="w-25" id="logo">
+    </ion-title>
+
+  </ion-toolbar>
+  <div id="divtexte">
+    <div id="centrerTexte" class="ion-text-center">
+      <p id="texte"> <ion-icon name="calculator"></ion-icon> Calculateur de frais</p>
+    </div>
+  </div>
+</div>
+
+<ion-content>
+  <form (ngSubmit)="calculFrais()" [formGroup]="calcForm" class="mt-5">
+    <ion-item lines="inset">
+      <ion-label position="floating">Type de Transaction</ion-label>
+      <ion-input type="text" value="{{depot}}" readonly class="text-dark bolder"></ion-input>
+    </ion-item>
+    <ion-item lines="inset">
+      <ion-label position="floating">Montant</ion-label>
+      <ion-input type="text" formControlName="montant" required pattern="[0-9]{4,20}" class="text-dark bolder"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="ion-item-right-margin mt-5 ion-float-right">
+      <ion-button size="default" shape="round" type="submit" [disabled]="!calcForm.valid" id="bouton">Calculer</ion-button>
+    </ion-item>
+  </form>
+
+</ion-content>

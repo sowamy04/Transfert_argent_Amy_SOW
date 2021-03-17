@@ -1,0 +1,92 @@
+ion-title{
+  margin-left: 30%;
+}
+
+ion-content{
+  --background: #f2f2f2;
+  --ion-height: 85%;
+}
+
+ion-toolbar{
+  --ion-margin-top: 5%;
+}
+
+ion-item{
+  height : 30px;
+  font-size: 7px;
+  font-weight: bolder;
+}
+
+#total{
+  width: 70%;
+  height: 30px;
+  border: 2px solid #ff1a00;
+  float: right;
+  margin-right: 7px;
+}
+
+#totalTexte{
+  width: 35%;
+  height: 29px;
+  background-color: #ff1a00;
+  color: white;
+  font-size: 20px;
+  float: left;
+}
+
+#montant{
+  width: 55%;
+  height: 100%;
+  color: black;
+  font-size: 20px;
+  float: right;
+}
+
+$color :(
+  bright :  #7ad4fa
+);
+
+#entete{
+  height: 21.7%;
+  background-color: white;
+}
+
+#centrerTexte{
+  height: 100%;
+  width: 95%;
+  margin-left: 2%;
+  float: bottom;
+  margin-top: 7%;
+}
+
+#texte1{
+  width:53%;
+  font-size: 13px;
+  color:black;
+  margin-bottom: 2.5%;
+  margin-top: 3%;
+  float: bottom;
+}
+
+#texte{
+  width:40%;
+  font-size: 13px;
+  color:black;
+  margin-bottom: 2.5%;
+  margin-top: 3%;
+  float: bottom;
+}
+
+ion-col{
+  font-size: 10px;
+}
+
+.toute{
+  border-bottom: 2px solid #7ad4fa;
+  border-width: 3px;
+}
+
+.mes{
+  border-bottom: 2px solid #7ad4fa;
+  border-width: 3px;
+}

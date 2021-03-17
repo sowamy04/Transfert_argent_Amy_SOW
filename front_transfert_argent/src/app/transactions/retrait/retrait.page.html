@@ -1,0 +1,89 @@
+<div id="entete">
+  <ion-toolbar class="mt-4">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="user/home-user" name="home" color="bright"></ion-icon>
+      </ion-buttons>
+    <ion-title>
+      <img src="assets/images/logo.png" alt="" class="w-25" id="logo">
+    </ion-title>
+
+  </ion-toolbar>
+  <div id="divtexte">
+    <div id="centrerTexte" class="ion-text-center">
+      <p id="texte"> <ion-icon name="return-up-back-outline"></ion-icon> Retrait</p>
+    </div>
+  </div>
+</div>
+
+<ion-content>
+  <ion-item lines="inset" class="item mb-1" readonly>
+    <ion-label position="floating"> Code</ion-label>
+    <ion-input type="text" [value]="code"> </ion-input>
+  </ion-item>
+
+  <div id="head" class="rounded-pill shadow --ion-row">
+    <div class="btn ion-float-left">
+      <p class="{{cssRecep}}" (click)="firstPage()" > Bénéficiaire </p>
+    </div>
+    <div class="btn ion-float-right">
+      <p class="{{cssEmet}}" (click)="pageSuivante()" > Emetteur </p>
+    </div>
+  </div>
+
+  <div id ="form">
+    <form (ngSubmit)="retraitMontant()" padding-right >
+      <div [hidden]="recep">
+        <ion-item lines="inset" class="item mb-1">
+          <ion-label position="floating">N° CNI</ion-label>
+          <ion-input type="text" name="cni" > </ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1" readonly>
+          <ion-label position="floating">NOM ET PRÉNOM</ion-label>
+          <ion-input type="text" value="Abdou GUEYE"> </ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1" readonly>
+          <ion-label position="floating">MONTANT À RECEVOIR</ion-label>
+          <ion-input type="text" value="300.000"> </ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1" readonly>
+          <ion-label position="floating">TÉLÉPHONE</ion-label>
+          <ion-input type="text" value="78-546-54-78"> </ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1" readonly>
+          <ion-label position="floating">DATE D'ENVOIE</ion-label>
+          <ion-input type="text" value="20-02-2021"> </ion-input>
+        </ion-item>
+        <ion-item lines="none" class="ion-item-right-margin">
+          <ion-button (click)="pageSuivante()" size="default" shape="round" type="button" id="bouton"> Retirer </ion-button>
+        </ion-item>
+      </div>
+
+      <div [hidden]="emet">
+        <ion-item lines="inset" class="item mb-1" readonly>
+          <ion-label position="floating">N° CNI</ion-label>
+          <ion-input type="text" value="1 456 1899 00054"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1" readonly>
+          <ion-label position="floating">NOM ET PRÉNOM</ion-label>
+          <ion-input type="text" value="Mami GUEYE"> </ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1" readonly>
+          <ion-label position="floating">MONTANT ENVOYÉ</ion-label>
+          <ion-input type="text" value="300.000"> </ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1" readonly>
+          <ion-label position="floating">TÉLÉPHONE</ion-label>
+          <ion-input type="text" value="77-777-77-77"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1" readonly>
+          <ion-label position="floating">DATE D'ENVOIE</ion-label>
+          <ion-input type="text" value="20-02-2021"> </ion-input>
+        </ion-item>
+        <ion-item lines="none" class="ion-item-right-margin">
+          <ion-button class="mt-2" (click)="showAlert()" size="default" shape="round" type="button" id="bouton"> Suivant </ion-button>
+        </ion-item>
+      </div>
+
+      </form>
+  </div>
+</ion-content>

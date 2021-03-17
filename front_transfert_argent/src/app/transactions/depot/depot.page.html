@@ -1,0 +1,85 @@
+<div id="entete">
+  <ion-toolbar class="mt-4">
+    <ion-buttons slot="start">
+      <ion-icon routerLink="user/home-user" name="home" color="bright"></ion-icon>
+      </ion-buttons>
+    <ion-title>
+      <img src="assets/images/logo.png" alt="" class="w-25" id="logo">
+    </ion-title>
+
+  </ion-toolbar>
+  <div id="divtexte">
+    <div id="centrerTexte" class="ion-text-center">
+      <p id="texte"> <ion-icon name="return-up-forward-outline"></ion-icon> Dépôt</p>
+    </div>
+  </div>
+</div>
+
+<ion-content>
+  <div id="head" class="rounded-pill shadow --ion-row">
+    <div class="btn ion-float-left">
+      <p class="{{cssEmet}}" (click)="firstPage()" data-toggle="collapse" data-target="#emetteur" aria-expanded="false" aria-controls="emetteur"> Emetteur</p>
+    </div>
+    <div class="btn ion-float-right">
+      <p class="{{cssRecep}}" (click)="pageSuivante()" data-toggle="collapse" data-target="#beneficiaire" aria-expanded="false" aria-controls="beneficiaire"> Bénéficiaire</p>
+    </div>
+  </div>
+
+  <div id ="form">
+    <form (ngSubmit)="depotMontant()" padding-right [formGroup]="depotForm">
+      <div [hidden]="emet">
+        <ion-item lines="inset" class="item mb-1">
+          <ion-label position="floating">N° CNI</ion-label>
+          <ion-input type="text" formControlName="cni"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1">
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input formControlName="nom" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1">
+          <ion-label position="floating">Prénom</ion-label>
+          <ion-input formControlName="prenom" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1">
+          <ion-label position="floating">Numero Télephone</ion-label>
+          <ion-input formControlName="numDepot" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1">
+          <ion-label position="floating">Montant</ion-label>
+          <ion-input formControlName="montant" pattern="[0-9]{4,20}" type="text" [(ngModel)]="montant"></ion-input>
+        </ion-item>
+        <ion-item lines="inset float-right" class="item mb-1 frais">
+          <ion-label position="floating">Frais</ion-label>
+          <ion-input type="text" readonly [value]="fraissolde(montant)"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1">
+          <ion-label position="floating"> Total </ion-label>
+          <ion-input type="text" readonly [value]="+montant + fraissolde(montant)"></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="ion-item-right-margin">
+          <ion-button (click)="pageSuivante()" size="default" shape="round" type="button" id="bouton"> Suivant </ion-button>
+        </ion-item>
+      </div>
+
+      <div [hidden]="recep">
+        <ion-item lines="inset" class="item mb-1">
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input formControlName="nomRetrait" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1">
+          <ion-label position="floating">Prénom</ion-label>
+          <ion-input formControlName="prenomRetrait" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="inset" class="item mb-1">
+          <ion-label position="floating">Numero Télephone</ion-label>
+          <ion-input formControlName="numRetrait" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="ion-item-right-margin">
+          <ion-button class="mt-2" (click)="showAlert()" size="default" shape="round" type="button" id="bouton"> Suivant </ion-button>
+        </ion-item>
+      </div>
+
+      </form>
+  </div>
+
+</ion-content>

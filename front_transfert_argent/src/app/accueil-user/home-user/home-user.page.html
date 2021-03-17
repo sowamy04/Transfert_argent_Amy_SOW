@@ -1,0 +1,63 @@
+<div class="">
+  <ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>
+      <img src="assets/images/logo.png" alt="" class="w-25" id="logo">
+      <div id="profil"> <img src="assets/images/connexion.png" alt="" id="img"  class="mt-3"></div>
+    </ion-title>
+  </ion-toolbar>
+  <div class="shadow" id="consultation">
+    <div class="ml-5 mr-5 shadow">
+        <h6 id="tailleTexte" class="ml-2"> Mon solde disponible </h6>
+        <h6 class="float<ion-app>-left ml-2"> <strong id="montant"> {{montant}} </strong> {{cfa}} <ion-icon name="{{eye}}" (click)="afficherCacher()" class="float-right"> </ion-icon> </h6>
+         <p id="tailleTexte" class="ml-2"> Mis a jour le 30-01-2021 à 10:00</p>
+    </div>
+  </div>
+</ion-header>
+</div>
+
+<div class="bg-white text-dark" id="content">
+  <ion-item routerLink="depot" class="text-dark item ion-item">
+    <ion-icon name="time" side="start"> </ion-icon>
+    Dépot
+  </ion-item>
+  <ion-item routerLink="retrait" class=" text-dark ion-item">
+    <ion-icon name="time" side="start"> </ion-icon>
+    Retrait
+  </ion-item>
+  <ion-item routerLink="trans-user" class=" text-dark ion-item">
+    <ion-icon name="time" side="start"> </ion-icon>
+    Mes transactions
+  </ion-item>
+  <ion-item routerLink="calc-user" class=" text-dark ion-item">
+    <ion-icon name="time" side="start"> </ion-icon>
+    Calculateur de frais
+  </ion-item>
+  <ion-item class=" text-dark ion-item">
+    <ion-icon name="time" side="start"> </ion-icon>
+    Déconnexion
+  </ion-item>
+</div>
+
+
+<ion-menu side="start" menuId="first" contentId="content1">
+  <ion-content>
+    <div class="mt-5">
+      <ion-list *ngFor="let pages of navigate" id="liste">
+        <ion-menu-toggle auto-hide="true">
+          <ion-item [routerLink]="pages.url" routerDirection="forward" class="item">
+              <ion-icon [name]="pages.icon" slot="start" color="bright"></ion-icon>
+                  {{pages.title}}
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </div>
+    <ion-item id="deconnexion" class="item" lines="none">
+      Deconnexion
+      <ion-icon name="arrow-round-forward" color="bright" ></ion-icon>
+    </ion-item>
+  </ion-content>
+</ion-menu>
